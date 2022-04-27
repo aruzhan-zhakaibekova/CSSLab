@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  font-size: 24px;
+  background-image: url("poster.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.wrapper {
+  display: grid;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  align-content: center;
+  justify-content: center;
+}
+
+.text-btn {
+  font-size: 14px;
+  height: 40px;
+  color: darkslateblue;
+  background-color: yellow;
+  border: none;
+  transition: all 0.5s;
+  transition-timing-function: ease;
+}
+
+.text-btn:hover {
+  background-color: darksalmon;
+}
+
+.text-btn:hover span {
+  display: none
+}
+
+.text-btn:hover:before {
+  content: "ChangAn is a British shorthair kitty, also known as Lego. He has over 6M subs on TikTok."
+}
+
+.container {
+  margin-top: 20px;
+width: 640px;
+height: 480px;
+position: relative;
+transform-style: preserve-3d;
+}
+
+.front {
+  background-color: darkslateblue;
+  color: white;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(1px);
+}
+
+
+.back {
+  background-color: darkslateblue;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width:100%;
+  height: 100%;
+  transform: rotateY(180deg) translateZ(1px);
+}
+
+.back video{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.anim{
+  animation-name: flip;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes flip {
+  from{transform: rotateY(0deg);}
+    to{transform: rotateY(180deg);}
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sub-btn {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  animation: wiggle 2s linear infinite;
+}
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}
